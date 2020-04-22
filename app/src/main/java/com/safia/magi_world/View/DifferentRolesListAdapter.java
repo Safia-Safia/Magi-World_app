@@ -47,7 +47,7 @@ public class DifferentRolesListAdapter extends RecyclerView.Adapter<DifferentRol
 
     @Override
     public MyViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
-        View v = LayoutInflater.from(parent.getContext()).inflate(R.layout.roles_list, parent, false);
+        View v = LayoutInflater.from(parent.getContext()).inflate(R.layout.roles_adapter, parent, false);
         MyViewHolder evh = new MyViewHolder(v);
         return evh;
     }

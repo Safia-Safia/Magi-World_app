@@ -16,13 +16,31 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        Button mPlayB = findViewById(R.id.activity_main_play_btn);
+        Button mPlayA = findViewById(R.id.activity_main_play_btn1);
+        Button mPlayB = findViewById(R.id.activity_main_play_btn2);
+        Button mPlayC = findViewById(R.id.activity_main_play_btn3);
+
+        mPlayA.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent playActivityIntent = new Intent(MainActivity.this, CharacteriticListActivity.class);
+                startActivity(playActivityIntent);
+            }
+        });
 
         mPlayB.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent scoreActivityIntent = new Intent(MainActivity.this, ClassesIndexActivity.class);
-                startActivity(scoreActivityIntent);
+                Intent rolesActivityIntent = new Intent(MainActivity.this, RolesListActivity.class);
+                startActivity(rolesActivityIntent);
+            }
+        });
+
+        mPlayC.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent regleActivityIntent = new Intent(MainActivity.this, ReglesActivity.class);
+                startActivity(regleActivityIntent);
             }
         });
     }

@@ -12,7 +12,8 @@ import com.safia.magi_world.View.DifferentRolesListAdapter;
 
 import java.util.ArrayList;
 
-public class ClassesIndexActivity extends AppCompatActivity {
+public class RolesListActivity extends AppCompatActivity {
+
     private RecyclerView.Adapter mAdapter;
 
     //This class is used to show a list of the different roles in the game.
@@ -20,7 +21,7 @@ public class ClassesIndexActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_classes_index);
+        setContentView(R.layout.activity_roles_list);
 
         ArrayList<RolesList> differentRoles = new ArrayList<>();
         differentRoles.add(new RolesList(R.drawable.ic_guerrier, "Guerrier", "Attaque Basique -Coup d'épée :\nEffectue des dommageségaux à\nla force du joueur sur l’adversaire.\n"+
@@ -37,7 +38,5 @@ public class ClassesIndexActivity extends AppCompatActivity {
 
         recyclerView.setLayoutManager(layoutManager);
         recyclerView.setAdapter(mAdapter);
-
     }
-
 }

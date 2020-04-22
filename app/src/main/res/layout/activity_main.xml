@@ -21,8 +21,22 @@
         android:textSize="22sp"
         android:gravity="center_horizontal" />
 
+
     <Button
-        android:id="@+id/activity_main_play_btn"
+        android:id="@+id/activity_main_play_btn1"
+        android:layout_width="256dp"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:layout_marginTop="30dp"
+        android:padding="30dp"
+        android:background="#BBD2E1"
+        android:textColor="#FEFEFE"
+        android:text="Commencer ?"
+        android:layout_weight="1"
+        />
+
+    <Button
+        android:id="@+id/activity_main_play_btn2"
         android:layout_width="256dp"
         android:layout_height="wrap_content"
         android:layout_gravity="center"
@@ -34,18 +48,6 @@
         android:layout_weight="1"
         />
 
-    <Button
-        android:id="@+id/activity_main_play_btn2"
-        android:layout_width="256dp"
-        android:layout_height="wrap_content"
-        android:layout_gravity="center"
-        android:layout_marginTop="30dp"
-        android:padding="30dp"
-        android:background="#BBD2E1"
-        android:textColor="#FEFEFE"
-        android:text="Commencer ?"
-        android:layout_weight="1"
-        />
 
     <Button
         android:id="@+id/activity_main_play_btn3"

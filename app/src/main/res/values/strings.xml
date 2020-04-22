@@ -1,3 +1,5 @@
 <resources>
     <string name="app_name">Magi-World</string>
+    <string name="attendtion">Attention, le niveau doit être égal à la sommes des caracteristiques force, agilité et intelligence.</string>
+    <string name="règleCommencer">Le jeu commence par proposer au joueur 1 de choisir entre Guerrier, Rôdeur ou Mage. Il doit ensuite choisir le niveau, la force, l’agilité et enfin l’intelligence de son personnage. C’est ensuite au tour du second joueur de choisir la classe et les caractéristiques de son personnage. La partie démarre ensuite, le joueur 1 commence. Chaque joueur joue tour à tour et choisit entre son Attaque Basique ou son Attaque spéciale. Quand un joueur n’a plus de point de vie, la partie est terminée et l’autre joueur l’emporte.</string>
 </resources>
