@@ -1,0 +1,80 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:layout_margin="10dp"
+    tools:context=".Controller.Choice_classActivity">
+
+    <TextView
+        android:id="@+id/choix_classe_joueur"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:padding="25dp"
+        android:textStyle="bold"
+        android:text="Choissez la classe du joueur :"
+        android:textAlignment="center"
+        android:textSize="20sp" />
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="71dp"
+        android:layout_below="@+id/choix_classe_joueur"
+        android:gravity="center_horizontal"
+        android:text="Guerrier"
+        android:textSize="25sp"
+        tools:ignore="RtlCompat" />
+
+    <ImageButton
+        android:id="@+id/guerrier_Button"
+        android:layout_width="match_parent"
+        android:layout_height="142dp"
+        android:layout_below="@+id/choix_classe_joueur"
+        android:layout_marginTop="33dp"
+        android:background="#FEFEFE"
+        android:gravity="center_horizontal"
+        app:srcCompat="@drawable/ic_guerrier" />
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="71dp"
+        android:layout_below="@+id/guerrier_Button"
+        android:layout_marginTop="3dp"
+        android:gravity="center_horizontal"
+        android:text="Rodeur"
+        android:textSize="25sp"
+        tools:ignore="RtlCompat" />
+
+    <ImageButton
+        android:id="@+id/rodeur_Button"
+        android:layout_width="match_parent"
+        android:layout_height="142dp"
+        android:layout_below="@+id/guerrier_Button"
+        android:layout_marginTop="44dp"
+        android:background="#FEFEFE"
+        app:srcCompat="@drawable/ic_rodeur" />
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="71dp"
+        android:layout_below="@+id/rodeur_Button"
+        android:layout_marginTop="-19dp"
+        android:gravity="center_horizontal"
+        android:text="Rodeur"
+        android:textSize="25sp"
+        tools:ignore="RtlCompat" />
+
+    <ImageButton
+        android:id="@+id/mage_Button"
+        android:layout_width="match_parent"
+        android:layout_height="142dp"
+        android:layout_below="@+id/rodeur_Button"
+        android:layout_marginTop="27dp"
+        android:background="#FEFEFE"
+        android:gravity="center_horizontal"
+        app:srcCompat="@drawable/ic_mage" />
+
+
+</RelativeLayout>

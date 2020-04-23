@@ -55,7 +55,7 @@
             android:layout_height="51dp"
             android:layout_marginStart="46dp"
             android:layout_toEndOf="@+id/niveau"
-            android:text="Entrer une valeur" />
+            android:hint="Entrer une valeur" />
 
     </RelativeLayout>
 
@@ -82,7 +82,7 @@
             android:layout_height="51dp"
             android:layout_marginStart="46dp"
             android:layout_toEndOf="@+id/force"
-            android:text="Entrer une valeur" />
+            android:hint="Entrer une valeur" />
 
     </RelativeLayout>
 
@@ -109,7 +109,7 @@
             android:layout_height="51dp"
             android:layout_marginStart="46dp"
             android:layout_toEndOf="@+id/agilite"
-            android:text="Entrer une valeur" />
+            android:hint="Entrer une valeur" />
 
     </RelativeLayout>
 
@@ -137,9 +137,19 @@
             android:layout_height="51dp"
             android:layout_marginStart="46dp"
             android:layout_toEndOf="@+id/intelligence"
-            android:text="Entrer une valeur" />
+            android:hint="Entrer une valeur" />
 
     </RelativeLayout>
+
+    <Button
+        android:id="@+id/suivant"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
+        android:layout_alignParentBottom="true"
+        android:text="Suivant"
+        android:padding="40dp"
+        android:layout_marginBottom="30dp"/>
 
 
 </RelativeLayout>

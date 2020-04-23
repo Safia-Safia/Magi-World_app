@@ -23,7 +23,7 @@ public class MainActivity extends AppCompatActivity {
         mPlayA.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent playActivityIntent = new Intent(MainActivity.this, CharacteriticListActivity.class);
+                Intent playActivityIntent = new Intent(MainActivity.this, Choice_classActivity.class);
                 startActivity(playActivityIntent);
             }
         });
@@ -44,4 +44,6 @@ public class MainActivity extends AppCompatActivity {
             }
         });
     }
+
+    //TODO dans le bouton commencer, ajouter des ImagesButton pour nous guider vers la classe désirée
 }
