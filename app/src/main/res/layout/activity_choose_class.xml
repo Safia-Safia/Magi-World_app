@@ -6,75 +6,191 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:layout_margin="10dp"
-    tools:context=".Controller.Choice_classActivity">
+    tools:context=".Controller.FirstPLayerActivity">
 
     <TextView
         android:id="@+id/choix_classe_joueur"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:padding="25dp"
-        android:textStyle="bold"
-        android:text="Choissez la classe du joueur :"
+        android:padding="20dp"
+        android:textColor="#01796F"
+        android:text="Création du joueur x :"
         android:textAlignment="center"
-        android:textSize="20sp" />
-
-    <TextView
-        android:layout_width="match_parent"
-        android:layout_height="71dp"
-        android:layout_below="@+id/choix_classe_joueur"
-        android:gravity="center_horizontal"
-        android:text="Guerrier"
-        android:textSize="25sp"
-        tools:ignore="RtlCompat" />
+        android:textSize="15sp"
+        android:textStyle="bold" />
 
     <ImageButton
         android:id="@+id/guerrier_Button"
-        android:layout_width="match_parent"
-        android:layout_height="142dp"
-        android:layout_below="@+id/choix_classe_joueur"
-        android:layout_marginTop="33dp"
+        android:layout_width="123dp"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/text_diff_roles"
+        android:layout_marginTop="0dp"
         android:background="#FEFEFE"
         android:gravity="center_horizontal"
         app:srcCompat="@drawable/ic_guerrier" />
 
-    <TextView
-        android:layout_width="match_parent"
-        android:layout_height="71dp"
-        android:layout_below="@+id/guerrier_Button"
-        android:layout_marginTop="3dp"
-        android:gravity="center_horizontal"
-        android:text="Rodeur"
-        android:textSize="25sp"
-        tools:ignore="RtlCompat" />
 
     <ImageButton
         android:id="@+id/rodeur_Button"
-        android:layout_width="match_parent"
-        android:layout_height="142dp"
-        android:layout_below="@+id/guerrier_Button"
-        android:layout_marginTop="44dp"
+        android:layout_width="123dp"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/text_diff_roles"
+        android:layout_toRightOf="@+id/guerrier_Button"
         android:background="#FEFEFE"
         app:srcCompat="@drawable/ic_rodeur" />
 
-    <TextView
-        android:layout_width="match_parent"
-        android:layout_height="71dp"
-        android:layout_below="@+id/rodeur_Button"
-        android:layout_marginTop="-19dp"
-        android:gravity="center_horizontal"
-        android:text="Rodeur"
-        android:textSize="25sp"
-        tools:ignore="RtlCompat" />
-
     <ImageButton
         android:id="@+id/mage_Button"
-        android:layout_width="match_parent"
-        android:layout_height="142dp"
-        android:layout_below="@+id/rodeur_Button"
-        android:layout_marginTop="27dp"
+        android:layout_width="130dp"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/text_diff_roles"
+        android:layout_marginLeft="-7dp"
+        android:layout_toRightOf="@+id/rodeur_Button"
         android:background="#FEFEFE"
+        app:srcCompat="@drawable/ic_mage"
+        />
+
+    <TextView
+        android:id="@+id/text_diff_roles"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:padding="10dp"
         android:gravity="center_horizontal"
-        app:srcCompat="@drawable/ic_mage" />
+        android:textColor="#01796F"
+        android:layout_below="@+id/choix_classe_joueur"
+        android:text="Guerrier                        Rodeur                       Mage"
+        android:textStyle="bold|italic"/>
 
 
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_marginBottom="30dp"
+        android:orientation="vertical"
+        android:layout_below="@+id/rodeur_Button">
+
+        <RelativeLayout
+            android:id="@+id/ch1"
+            android:layout_marginTop="30dp"
+            android:layout_width="wrap_content"
+            android:layout_height="56dp"
+            android:orientation="vertical"
+            android:textAlignment="center">
+
+            <TextView
+                android:id="@+id/niveau"
+                android:layout_width="152dp"
+                android:layout_height="39dp"
+                android:gravity="center_horizontal"
+                android:layout_centerVertical="true"
+                android:text="Niveau :"
+                android:textAppearance="?android:attr/textAppearanceLarge"
+                android:textSize="20dp" />
+
+            <EditText
+                android:id="@+id/editText"
+                android:layout_width="153dp"
+                android:layout_height="51dp"
+                android:layout_toEndOf="@+id/niveau"
+                android:gravity="center_horizontal"
+                android:hint="Entre 0 et 100" />
+
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:id="@+id/ch2"
+            android:layout_width="match_parent"
+            android:layout_height="56dp"
+            android:layout_below="@+id/ch1"
+            android:orientation="vertical"
+            android:padding="5dp"
+            android:textAlignment="center">
+
+            <TextView
+                android:id="@+id/force"
+                android:layout_width="152dp"
+                android:layout_height="39dp"
+                android:gravity="center_horizontal"
+                android:layout_centerVertical="true"
+                android:text="Force :"
+                android:textAppearance="?android:attr/textAppearanceLarge"
+                android:textSize="20dp" />
+
+            <EditText
+                android:id="@+id/editText2"
+                android:layout_width="153dp"
+                android:layout_height="51dp"
+                android:layout_toEndOf="@+id/force"
+                android:gravity="center_horizontal"
+                android:hint="Entre 0 et 100" />
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:id="@+id/ch3"
+            android:layout_width="match_parent"
+            android:layout_height="56dp"
+            android:layout_below="@+id/ch2"
+            android:orientation="vertical"
+            android:padding="5dp"
+            android:textAlignment="center">
+
+            <TextView
+                android:id="@+id/agilite"
+                android:layout_width="152dp"
+                android:layout_height="39dp"
+                android:gravity="center_horizontal"
+                android:layout_centerVertical="true"
+                android:text="Agilité :"
+                android:textAppearance="?android:attr/textAppearanceLarge"
+                android:textSize="20dp" />
+
+            <EditText
+                android:id="@+id/editText3"
+                android:layout_width="153dp"
+                android:layout_height="51dp"
+                android:layout_toEndOf="@+id/agilite"
+                android:gravity="center_horizontal"
+                android:hint="Entre 0 et 100" />
+
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:id="@+id/ch4"
+            android:layout_width="match_parent"
+            android:layout_height="56dp"
+            android:layout_below="@+id/ch3"
+            android:orientation="vertical"
+            android:padding="5dp"
+            android:textAlignment="center">
+            <TextView
+                android:id="@+id/intelligence"
+                android:layout_width="152dp"
+                android:layout_height="39dp"
+                android:gravity="center_horizontal"
+                android:layout_centerVertical="true"
+                android:text="Intelligence :"
+                android:textAppearance="?android:attr/textAppearanceLarge"
+                android:textSize="20dp" />
+
+            <EditText
+                android:id="@+id/editText4"
+                android:layout_width="153dp"
+                android:layout_height="51dp"
+                android:layout_toEndOf="@+id/intelligence"
+                android:gravity="center_horizontal"
+                android:hint="Entre 0 et 100" />
+
+        </RelativeLayout>
+
+        <Button
+            android:id="@+id/nextbtn"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentBottom="true"
+            android:layout_centerHorizontal="true"
+            android:background="#83A697"
+            android:text="Suivant"
+            android:textColor="#FEFEFE"/>
+
+    </RelativeLayout>
 </RelativeLayout>

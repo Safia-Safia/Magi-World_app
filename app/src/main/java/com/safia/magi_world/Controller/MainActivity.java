@@ -23,7 +23,7 @@ public class MainActivity extends AppCompatActivity {
         mPlayA.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent playActivityIntent = new Intent(MainActivity.this, Choice_classActivity.class);
+                Intent playActivityIntent = new Intent(MainActivity.this, FirstPLayerActivity.class);
                 startActivity(playActivityIntent);
             }
         });
