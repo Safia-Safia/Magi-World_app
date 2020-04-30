@@ -10,9 +10,9 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
         <activity android:name=".Controller.FirstPLayerActivity"></activity>
+        <activity android:name=".Controller.SecondPlayerActivity" />
         <activity android:name=".Controller.RolesListActivity" />
         <activity android:name=".Controller.ReglesActivity" />
-        <activity android:name=".Controller.ClassesIndexActivity" />
         <activity android:name=".Controller.MainActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />

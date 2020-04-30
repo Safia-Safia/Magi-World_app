@@ -1,12 +1,10 @@
 package com.safia.magi_world.Model;
 
-import com.safia.magi_world.Controller.MainActivity;
-
-public class Guerrier extends Personnage {
+public class Guerrier extends Character {
 
 
-    public Guerrier(int numJoueur, int force, int agilite, int intelligence) {
-        super(numJoueur, force, agilite, intelligence);
+    public Guerrier(int niveau, int force, int agilite, int intelligence) {
+        super(niveau, force, agilite, intelligence);
         classe="Guerrier";
         scream = "Woarg ! ";
     }
@@ -30,6 +28,12 @@ public class Guerrier extends Personnage {
                 break;
         }
 
+    }
+
+    @Override
+    public String introduction() {
+        return scream + "Je suis le "+ classe+" "+num +", de  niveau "+ level + " , je possède "+ life + " de vitalité, "+ strength+
+                " de force, "+ agility+ " d'agilité et "+ intelligence+ " d'intelligence !\n";
     }
 
 }

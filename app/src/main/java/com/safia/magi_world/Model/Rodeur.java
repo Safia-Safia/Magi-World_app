@@ -1,6 +1,6 @@
 package com.safia.magi_world.Model;
 
-public class Rodeur extends Personnage{
+public class Rodeur extends Character {
 
     public Rodeur(int numJoueur, int strength, int agility, int intelligence) {
         super(numJoueur,strength, agility, intelligence);
@@ -24,5 +24,11 @@ public class Rodeur extends Personnage{
                 System.out.print(narrateur);
                 break;
         }
+    }
+
+    @Override
+    public String introduction() {
+        return scream + "Je suis le "+ classe+" , de  niveau "+ level + " , je possède "+ life + " de vitalité, "+ strength+
+                " de force, "+ agility+ " d'agilité et "+ intelligence+ " d'intelligence !\n";
     }
 }

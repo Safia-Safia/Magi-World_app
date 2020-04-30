@@ -24,6 +24,7 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 Intent playActivityIntent = new Intent(MainActivity.this, FirstPLayerActivity.class);
+             //   playActivityIntent.putExtra("Numero Joueur", 1);
                 startActivity(playActivityIntent);
             }
         });

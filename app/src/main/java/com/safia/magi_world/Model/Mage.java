@@ -1,7 +1,7 @@
 package com.safia.magi_world.Model;
 
 
-public class Mage extends Personnage {
+public class Mage extends Character {
 
 
     public Mage(int numJoueur, int strength, int agility, int intelligence) {
@@ -35,5 +35,11 @@ public class Mage extends Personnage {
                 break;
 
         }
+    }
+
+    @Override
+    public String introduction() {
+        return scream + "Je suis le "+ classe+" "+num +", de  niveau "+ level + " , je possède "+ life + " de vitalité, "+ strength+
+                " de force, "+ agility+ " d'agilité et "+ intelligence+ " d'intelligence !\n";
     }
 }

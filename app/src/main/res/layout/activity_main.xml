@@ -19,7 +19,8 @@
         android:gravity="center"
         android:text="Magi World \n Qui sera le champion ?"
         android:textAlignment="center"
-        android:textColor="#266197"
+        android:textStyle="bold"
+        android:textColor="#1B4F08"
         android:textSize="22sp" />
 
     <Button
@@ -29,7 +30,7 @@
         android:layout_gravity="center"
         android:layout_marginTop="30dp"
         android:padding="15dp"
-        android:background="#BBD2E1"
+        android:background="#83A697"
         android:textColor="#FEFEFE"
         android:text="Commencer ?"
         />
@@ -42,7 +43,7 @@
         android:layout_marginTop="30dp"
         android:padding="15dp"
         android:textColor="#FEFEFE"
-        android:background="#BF3030"
+        android:background="#568203"
         android:text="Liste des roles"
         />
 
@@ -54,7 +55,7 @@
         android:layout_gravity="center"
         android:layout_marginTop="30dp"
         android:padding="15dp"
-        android:background="#BBD2E1"
+        android:background="#1B4F08"
         android:textColor="#FEFEFE"
         android:text="Règles"
         />
