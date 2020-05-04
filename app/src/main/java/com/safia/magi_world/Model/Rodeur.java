@@ -28,7 +28,7 @@ public class Rodeur extends Character {
 
     @Override
     public String introduction() {
-        return scream + "Je suis le "+ classe+" , de  niveau "+ level + " , je possède "+ life + " de vitalité, "+ strength+
+        return "Pst" + "Je suis le Mage de niveau "+ level + " , je possède 3 de vitalité, "+ strength+
                 " de force, "+ agility+ " d'agilité et "+ intelligence+ " d'intelligence !\n";
     }
 }

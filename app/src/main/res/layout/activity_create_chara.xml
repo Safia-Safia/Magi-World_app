@@ -32,7 +32,7 @@
         app:srcCompat="@drawable/ic_guerrier" />
 
     <ImageButton
-        android:id="@+id/rodeur_Button"
+        android:id="@+id/btn_rodeur"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_below="@+id/text_diff_roles"
@@ -43,13 +43,13 @@
         app:srcCompat="@drawable/ic_rodeur" />
 
     <ImageButton
-        android:id="@+id/mage_Button"
+        android:id="@+id/btn_mage"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_below="@+id/text_diff_roles"
         android:layout_marginLeft="25dp"
         android:layout_marginTop="2dp"
-        android:layout_toRightOf="@+id/rodeur_Button"
+        android:layout_toRightOf="@+id/btn_rodeur"
         android:background="#FEFEFE"
         app:srcCompat="@drawable/ic_mage" />
 
@@ -68,7 +68,7 @@
     <RelativeLayout
         android:layout_width="wrap_content"
         android:layout_height="440dp"
-        android:layout_below="@+id/rodeur_Button"
+        android:layout_below="@+id/btn_rodeur"
         android:layout_marginTop="27dp"
         android:layout_marginBottom="30dp"
         android:orientation="vertical">
@@ -98,7 +98,8 @@
                 android:layout_marginStart="6dp"
                 android:layout_toEndOf="@+id/niveau"
                 android:gravity="center_horizontal"
-                android:hint="Entre 0 et 100" />
+                android:inputType="number"
+                android:hint="Entre 1 et 100" />
 
         </RelativeLayout>
 
@@ -126,6 +127,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_toEndOf="@+id/force"
+                android:inputType="number"
                 android:gravity="center_horizontal"
                 android:hint="Entre 0 et 100" />
         </RelativeLayout>
@@ -155,6 +157,7 @@
                 android:layout_height="wrap_content"
                 android:layout_toEndOf="@+id/text_agility"
                 android:gravity="center_horizontal"
+                android:inputType="number"
                 android:hint="Entre 0 et 100" />
 
         </RelativeLayout>
@@ -184,6 +187,7 @@
                 android:layout_height="wrap_content"
                 android:layout_toEndOf="@+id/text_intelligence"
                 android:gravity="center_horizontal"
+                android:inputType="number"
                 android:hint="Entre 0 et 100" />
 
         </RelativeLayout>

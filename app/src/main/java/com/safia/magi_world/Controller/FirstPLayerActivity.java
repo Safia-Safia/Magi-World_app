@@ -2,7 +2,6 @@ package com.safia.magi_world.Controller;
 
 import androidx.appcompat.app.AppCompatActivity;
 
-import android.annotation.SuppressLint;
 import android.app.AlertDialog;
 import android.content.DialogInterface;
 import android.content.Intent;
@@ -23,10 +22,10 @@ import com.safia.magi_world.R;
 public class FirstPLayerActivity extends AppCompatActivity implements View.OnClickListener {
     private ImageButton mWariorBtn, mMageBtn, mRodeurBtn;
     private Button mNextbtn;
-    private static Character player1;
     private EditText mLevel, mStrength, mAgility, mIntelligence;
     private int level, life, strength, agility, intelligence;
     String characterClass;
+    private static Character player1;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -40,8 +39,8 @@ public class FirstPLayerActivity extends AppCompatActivity implements View.OnCli
         mIntelligence = findViewById(R.id.edit_intelligence);
 
         mWariorBtn = findViewById(R.id.btn_warrior);
-        mMageBtn = findViewById(R.id.mage_Button);
-        mRodeurBtn = findViewById(R.id.rodeur_Button);
+        mMageBtn = findViewById(R.id.btn_mage);
+        mRodeurBtn = findViewById(R.id.btn_rodeur);
 
         mWariorBtn.setOnClickListener(this);
         mRodeurBtn.setOnClickListener(this);
@@ -49,11 +48,9 @@ public class FirstPLayerActivity extends AppCompatActivity implements View.OnCli
 
         mNextbtn = findViewById(R.id.nextbtn);
         mNextbtn.setOnClickListener(this);
-        //  mNextButton.setEnabled(false);
-        //getIntent().getIntExtra("Numero Joueur",1);
+       int playerNumber = getIntent().getIntExtra(MainActivity.PLAYER_NUMBER,1);
         TextView mNumJoeur = findViewById(R.id.creat_du_joeur);
-        mNumJoeur.setText(getString(R.string.creation_joueur, 1));
-
+        mNumJoeur.setText(getString(R.string.creation_joueur, playerNumber));
 
     }
 
@@ -61,10 +58,14 @@ public class FirstPLayerActivity extends AppCompatActivity implements View.OnCli
     @Override
     public void onClick(View v) {
         if (v.getId() == R.id.nextbtn) {
-           if( checkValid()){
-                introduction();
-               Intent intent = new Intent(this, SecondPlayerActivity.class);
-            startActivity(intent);}
+           if( checkValid()) {
+               //introduction();
+               Intent intent = new Intent();
+              // intent.putExtra(MainActivity.PLAYER,player1);
+               setResult(RESULT_OK, intent);
+               finish();
+
+           }
         }
         if (v.getId() == R.id.btn_warrior) {
             characterClass = "guerrier";
@@ -72,13 +73,13 @@ public class FirstPLayerActivity extends AppCompatActivity implements View.OnCli
             mMageBtn.setBackgroundColor(getResources().getColor(R.color.noColor));
             mRodeurBtn.setBackgroundColor(getResources().getColor(R.color.noColor));
         }
-        if (v.getId() == R.id.rodeur_Button) {
+        if (v.getId() == R.id.btn_rodeur) {
             characterClass = "rodeur";
             mRodeurBtn.setBackgroundColor(getResources().getColor(R.color.onClickOnClass));
             mMageBtn.setBackgroundColor(getResources().getColor(R.color.noColor));
             mWariorBtn.setBackgroundColor(getResources().getColor(R.color.noColor));
         }
-        if (v.getId() == R.id.mage_Button) {
+        if (v.getId() == R.id.btn_mage) {
             characterClass = "mage";
             mMageBtn.setBackgroundColor(getResources().getColor(R.color.onClickOnClass));
             mWariorBtn.setBackgroundColor(getResources().getColor(R.color.noColor));
@@ -93,7 +94,7 @@ public class FirstPLayerActivity extends AppCompatActivity implements View.OnCli
        new AlertDialog.Builder(this)
                .setTitle(getString(R.string.creation_joueur, 1))
                .setMessage(player1.introduction())
-               .setPositiveButton("ok", new DialogInterface.OnClickListener() {
+               .setPositiveButton("SUIVANT", new DialogInterface.OnClickListener() {
             @Override
             public void onClick(DialogInterface dialog, int which) {
               Intent intent = new Intent(FirstPLayerActivity.this, SecondPlayerActivity.class);
@@ -136,4 +137,6 @@ public class FirstPLayerActivity extends AppCompatActivity implements View.OnCli
     }
         return true;
     }
+
+
 }
