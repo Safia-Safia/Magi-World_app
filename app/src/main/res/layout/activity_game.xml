@@ -1,0 +1,115 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:layout_margin="10dp"
+    tools:context=".Controller.GameActivity">
+
+    <TextView
+        android:id="@+id/attack_history_combat"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignTop="@+id/turn_recycler_view"
+        android:layout_marginTop="-63dp"
+        android:background="#FEFEFE"
+        android:padding="7dp"
+        android:text="HITORIQUE DU COMBAT :"
+        android:layout_centerHorizontal="true"
+        android:textColor="#074f5c" />
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/turn_recycler_view"
+        android:layout_width="match_parent"
+        android:layout_height="254dp"
+        android:layout_alignParentTop="true"
+        android:layout_marginTop="85dp"
+        android:layout_marginBottom="15dp"
+        tools:listitem="@layout/history" />
+
+    <TextView
+        android:id="@+id/players_turn"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/turn_recycler_view"
+        android:layout_centerHorizontal="true"
+        android:layout_marginStart="120dp"
+        android:layout_marginBottom="20dp"
+        android:background="#FEFEFE"
+        android:padding="10dp"
+        android:text="@string/playerTurn"
+        android:textColor="#074f5c" />
+
+    <Button
+        android:id="@+id/basic_attack"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/players_turn"
+        android:padding="10dp"
+        android:text="ATTAQUE BASIQUE"
+        android:textColor="#960018"
+        android:background="#FEFEFE"
+        android:layout_marginStart="25dp" />
+
+    <Button
+        android:id="@+id/special_attack"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/players_turn"
+        android:layout_toEndOf="@+id/basic_attack"
+        android:padding="10dp"
+        android:layout_marginStart="50dp"
+        android:textColor="#960018"
+        android:background="#FEFEFE"
+        android:text="ATTAQUE SPECIALE" />
+
+    <TextView
+        android:id="@+id/textview_player1_life"
+        android:layout_width="163dp"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/basic_attack"
+        android:layout_marginTop="51dp"
+        android:background="#8EA2C6"
+        android:text=" JOUEUR %d \n Niveau de vie :"
+        android:textAlignment="center"
+        android:textColor="#000" />
+
+    <TextView
+        android:id ="@+id/textview_vie1"
+        android:layout_width="163dp"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/textview_player1_life"
+        android:layout_marginTop="0dp"
+        android:background="#8EA2C6"
+        android:text="@string/level_Of_Life"
+        android:textColor="#000"
+        android:textAlignment="center" />
+
+    <TextView
+        android:id="@+id/textview_player2_life"
+        android:layout_width="163dp"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/special_attack"
+        android:layout_marginLeft="65dp"
+        android:layout_marginTop="51dp"
+        android:layout_toRightOf="@+id/textview_player1_life"
+        android:background="#067790"
+        android:text="@string/player_number_action"
+        android:textAlignment="center"
+        android:textColor="#000" />
+
+    <TextView
+        android:id ="@+id/textview_vie2"
+        android:layout_width="163dp"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/textview_player2_life"
+        android:background="#067790"
+        android:layout_marginLeft="65dp"
+        android:layout_toRightOf="@+id/textview_player1_life"
+        android:text="@string/level_Of_Life"
+        android:textColor="#000"
+        android:textAlignment="center" />
+
+
+</RelativeLayout>

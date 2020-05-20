@@ -6,7 +6,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:layout_margin="10dp"
-    tools:context=".Controller.FirstPLayerActivity">
+    tools:context=".Controller.PlayerCreationActivity">
 
     <TextView
         android:id="@+id/creat_du_joeur"
@@ -14,7 +14,7 @@
         android:layout_height="wrap_content"
         android:padding="20dp"
         android:textColor="#01796F"
-        android:text="@string/creation_joueur"
+        android:text="@string/player_number"
         android:textAlignment="center"
         android:textSize="15sp"
         android:textStyle="bold" />
@@ -79,14 +79,13 @@
             android:layout_height="56dp"
             android:layout_marginTop="30dp"
             android:orientation="vertical"
-            android:textAlignment="center">
+            >
 
             <TextView
                 android:id="@+id/niveau"
-                android:layout_width="152dp"
-                android:layout_height="39dp"
+                android:layout_width="111dp"
+                android:layout_height="41dp"
                 android:layout_centerVertical="true"
-                android:gravity="center_horizontal"
                 android:text="Niveau :"
                 android:textAppearance="?android:attr/textAppearanceLarge"
                 android:textSize="20dp" />
@@ -101,6 +100,18 @@
                 android:inputType="number"
                 android:hint="Entre 1 et 100" />
 
+            <TextView
+                android:id="@+id/life"
+                android:layout_width="111dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="36dp"
+                android:layout_marginTop="12dp"
+                android:layout_toEndOf="@+id/edit_level"
+                android:background="#83A697"
+                android:text="Vie:"
+                android:textColor="#FEFEFE"
+                android:textAlignment="center"
+                android:textSize="20dp" />
         </RelativeLayout>
 
         <RelativeLayout
@@ -109,15 +120,13 @@
             android:layout_height="56dp"
             android:layout_below="@+id/ch1"
             android:orientation="vertical"
-            android:padding="5dp"
             android:textAlignment="center">
 
             <TextView
                 android:id="@+id/force"
-                android:layout_width="152dp"
+                android:layout_width="115dp"
                 android:layout_height="39dp"
                 android:layout_centerVertical="true"
-                android:gravity="center_horizontal"
                 android:text="Force :"
                 android:textAppearance="?android:attr/textAppearanceLarge"
                 android:textSize="20dp" />
@@ -138,15 +147,13 @@
             android:layout_height="56dp"
             android:layout_below="@+id/text_force"
             android:orientation="vertical"
-            android:padding="5dp"
             android:textAlignment="center">
 
             <TextView
                 android:id="@+id/text_agility"
-                android:layout_width="152dp"
-                android:layout_height="39dp"
+                android:layout_width="115dp"
+                android:layout_height="wrap_content"
                 android:layout_centerVertical="true"
-                android:gravity="center_horizontal"
                 android:text="Agilité :"
                 android:textAppearance="?android:attr/textAppearanceLarge"
                 android:textSize="20dp" />
@@ -168,13 +175,12 @@
             android:layout_height="56dp"
             android:layout_below="@+id/ch3"
             android:orientation="vertical"
-            android:padding="5dp"
             android:textAlignment="center">
 
             <TextView
                 android:id="@+id/text_intelligence"
-                android:layout_width="152dp"
-                android:layout_height="39dp"
+                android:layout_width="wrap_content"
+                android:layout_height="46dp"
                 android:layout_centerVertical="true"
                 android:gravity="center_horizontal"
                 android:text="Intelligence :"

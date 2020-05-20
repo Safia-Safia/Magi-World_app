@@ -12,7 +12,7 @@ import com.safia.magi_world.View.RulesAdapter;
 
 import java.util.ArrayList;
 
-public class ReglesActivity extends AppCompatActivity {
+public class RulesActivity extends AppCompatActivity {
     private RecyclerView.Adapter mAdapter;
 
     @Override

@@ -1,37 +1,78 @@
 package com.safia.magi_world.Model;
 
-public abstract class Character {
+import android.os.Parcel;
+import android.os.Parcelable;
 
-    protected String num,scream,classe;
+public abstract class Character implements Parcelable {
+
+    protected String num, scream, classe;
     protected int level, life, strength, agility, intelligence;
     protected Character opponent;
+    public void setOpponent(Character opponent) { this.opponent = opponent; }
 
     //Constructeur avec paramètre
-    public Character(int numJoueur, int strength, int agility, int intelligence) {
-        num = "Joueur " + numJoueur;
-        level = strength + agility + intelligence;
-        life = level * 5;
+    public Character(int level, int strength, int agility, int intelligence) {
+        this.level = level;
+        this.life = level*5;
         this.strength = strength;
         this.agility = agility;
         this.intelligence = intelligence;
     }
 
-    public void setOpponent(Character opponent) { this.opponent = opponent; }
-    public Character getOpponent() { return opponent; }
-
-    protected abstract void sort (int choix);
-    //Methode permettant de choisir le mode d'attaque pour le joueur actif en appellant la methode abstraite 'sort'
-
     public abstract String introduction();
 
-
-    //Methode qui retire la vie
-    protected void removeLife(int lifeToRemove) { life-=lifeToRemove; }
-
-    //Methode présentation du joueur
-    @Override
-    public String toString() {
-        return  scream + "Je suis le "+ classe+" "+num +", de  niveau "+ level + " , je possède "+ life + " de vitalité, "+ strength+
-                " de force, "+ agility+ " d'agilité et "+ intelligence+ " d'intelligence !\n";
+    protected void removeLife(int lifeToRemove) {
+        life -= lifeToRemove;
     }
+
+    protected Character(Parcel in) {
+        this.level = in.readInt();
+        this.life = in.readInt();
+        this.strength = in.readInt();
+        this.agility = in.readInt();
+        this.intelligence = in.readInt();
+    }
+
+    @Override
+    public int describeContents() {
+        return 0;
+    }
+
+    @Override
+    public void writeToParcel(Parcel dest, int flags) {
+        dest.writeInt(level);
+        dest.writeInt(life);
+        dest.writeInt(strength);
+        dest.writeInt(agility);
+        dest.writeInt(intelligence);
+    }
+
+    public int getLevel() {
+        return level;
+    }
+
+    public int getLife() {
+        return life;
+    }
+
+    public int getStrength() {
+        return strength;
+    }
+
+    public int getAgility() {
+        return agility;
+    }
+
+    public int getIntelligence() {
+        return intelligence;
+    }
+
+    public abstract void basicAttack(Character opponent);
+
+    public abstract String basicAttackString(Character opponent);
+
+    public abstract void specialAttack(Character opponent);
+
+    public abstract String specialAttackString(Character opponent);
 }
+

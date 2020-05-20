@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    app:cardCornerRadius="3dp"
+    app:cardElevation="3dp"
+    android:layout_marginTop="10dp"
+    app:cardBackgroundColor="#074f5c">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        >
+
+        <TextView
+            android:id="@+id/number_of_turn"
+            android:padding="3dp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/turnNbr"
+            android:gravity="center"
+            android:textColor="#FEFEFE"
+          />
+
+        <TextView
+            android:id="@+id/attack_history"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:padding="10dp"
+            android:text="@string/damagehistory"
+            android:textColor="#FEFEFE" />
+
+
+
+    </LinearLayout>
+
+</androidx.cardview.widget.CardView>
