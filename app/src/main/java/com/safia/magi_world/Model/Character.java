@@ -5,13 +5,20 @@ import android.os.Parcelable;
 
 public abstract class Character implements Parcelable {
 
-    protected String num, scream, classe;
+    protected String num;
+    protected String scream;
+    protected String classe;
+
+
+
     protected int level, life, strength, agility, intelligence;
+    public String playersName;
     protected Character opponent;
     public void setOpponent(Character opponent) { this.opponent = opponent; }
 
     //Constructeur avec paramètre
-    public Character(int level, int strength, int agility, int intelligence) {
+    public Character(int level, int strength, int agility, int intelligence, String playersName) {
+        this.playersName = playersName;
         this.level = level;
         this.life = level*5;
         this.strength = strength;
@@ -26,6 +33,7 @@ public abstract class Character implements Parcelable {
     }
 
     protected Character(Parcel in) {
+        this.playersName= in.readString();
         this.level = in.readInt();
         this.life = in.readInt();
         this.strength = in.readInt();
@@ -40,6 +48,7 @@ public abstract class Character implements Parcelable {
 
     @Override
     public void writeToParcel(Parcel dest, int flags) {
+        dest.writeString(playersName);
         dest.writeInt(level);
         dest.writeInt(life);
         dest.writeInt(strength);
@@ -47,24 +56,10 @@ public abstract class Character implements Parcelable {
         dest.writeInt(intelligence);
     }
 
-    public int getLevel() {
-        return level;
-    }
+    public abstract String getName();
 
     public int getLife() {
         return life;
-    }
-
-    public int getStrength() {
-        return strength;
-    }
-
-    public int getAgility() {
-        return agility;
-    }
-
-    public int getIntelligence() {
-        return intelligence;
     }
 
     public abstract void basicAttack(Character opponent);

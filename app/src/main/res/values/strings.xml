@@ -15,5 +15,6 @@
     <string name="player_number_action">JOUEUR %d \n Niveau de vie :</string>
     <string name="turnNbr">TOUR %d :</string>
     <string name="damagehistory">Le joueur x attaque x et inflige x dégats.</string>
+    <string name= "endGame"> Fin du game !</string>
 
 </resources>

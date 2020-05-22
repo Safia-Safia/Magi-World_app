@@ -10,8 +10,8 @@ import com.safia.magi_world.Controller.GameActivity;
 public class Mage extends Character {
 
 
-    public Mage(int level, int strength, int agility, int intelligence) {
-        super(level, strength, agility, intelligence);
+    public Mage(int level, int strength, int agility, int intelligence, String playersName) {
+        super(level, strength, agility, intelligence, playersName);
         classe = "Mage";
         scream = "Abracadabraaaa ! ";
     }
@@ -22,6 +22,11 @@ public class Mage extends Character {
 
     public Mage(Parcel in) {
         super(in);
+    }
+
+    @Override
+    public String getName() {
+        return playersName;
     }
 
     public static final Parcelable.Creator<Character> CREATOR = new Parcelable.Creator<Character>(){
@@ -44,7 +49,7 @@ public class Mage extends Character {
          }
     @Override
     public String basicAttackString(Character opponent) {
-        return (  " utilise Boule de Feu et inflige " + intelligence + " dommage(s)!");
+        return (  getName()+" utilise Boule de Feu et inflige " + intelligence + " dommage(s)!");
     }
     @Override
     public void specialAttack(Character opponent) {
@@ -55,7 +60,7 @@ public class Mage extends Character {
         }    }
     @Override
     public String specialAttackString(Character opponent) {
-        return " utilise Soin et regagne " + (intelligence * 2) + " de vitalité !\n";
+        return getName()+" utilise Soin et regagne " + (intelligence * 2) + " de vitalité !\n";
     }
 
     @Override

@@ -13,6 +13,7 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ImageButton;
+import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -23,12 +24,12 @@ import com.safia.magi_world.Model.Rodeur;
 import com.safia.magi_world.R;
 
 public class PlayerCreationActivity extends AppCompatActivity implements View.OnClickListener {
-    private ImageButton mWariorBtn, mMageBtn, mRodeurBtn;
+    private ImageView mWariorBtn, mMageBtn, mRodeurBtn;
     private Button mNextbtn;
-    private EditText mLevel, mStrength, mAgility, mIntelligence;
+    private EditText mName,mLevel, mStrength, mAgility, mIntelligence;
     private int level, life, strength, agility, intelligence;
     private TextView mlife;
-    String characterClass;
+    String characterClass , name;
     public static Character player;
     public int playerNumber;
 
@@ -37,6 +38,7 @@ public class PlayerCreationActivity extends AppCompatActivity implements View.On
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_create_chara);
 
+        mName = findViewById(R.id.edit_name);
         mlife = findViewById(R.id.life);
         mLevel = findViewById(R.id.edit_level);
         mStrength = findViewById(R.id.edit_strength);
@@ -94,20 +96,20 @@ public class PlayerCreationActivity extends AppCompatActivity implements View.On
         if (v.getId() == R.id.btn_warrior) {
             characterClass = "GUERRIER";
             mWariorBtn.setBackgroundColor(getResources().getColor(R.color.onClickOnClass));
-            mMageBtn.setBackgroundColor(getResources().getColor(R.color.noColor));
-            mRodeurBtn.setBackgroundColor(getResources().getColor(R.color.noColor));
+            mMageBtn.setBackgroundColor(0x0);
+            mRodeurBtn.setBackgroundColor(0x0);
         }
         if (v.getId() == R.id.btn_rodeur) {
             characterClass = "RODEUR";
             mRodeurBtn.setBackgroundColor(getResources().getColor(R.color.onClickOnClass));
-            mMageBtn.setBackgroundColor(getResources().getColor(R.color.noColor));
-            mWariorBtn.setBackgroundColor(getResources().getColor(R.color.noColor));
+            mMageBtn.setBackgroundColor(0x0);
+            mWariorBtn.setBackgroundColor(0x0);
         }
         if (v.getId() == R.id.btn_mage) {
             characterClass = "MAGE";
             mMageBtn.setBackgroundColor(getResources().getColor(R.color.onClickOnClass));
-            mWariorBtn.setBackgroundColor(getResources().getColor(R.color.noColor));
-            mRodeurBtn.setBackgroundColor(getResources().getColor(R.color.noColor));
+            mWariorBtn.setBackgroundColor(0x0);
+            mRodeurBtn.setBackgroundColor(0x0);
         }
     }
 
@@ -137,6 +139,7 @@ public class PlayerCreationActivity extends AppCompatActivity implements View.On
 
     public boolean checkValid() {
 
+        name = mName.getText().toString();
         level = Integer.parseInt(mLevel.getText().toString());
         strength = Integer.parseInt(mStrength.getText().toString());
         intelligence = Integer.parseInt(mIntelligence.getText().toString());
@@ -153,13 +156,13 @@ public class PlayerCreationActivity extends AppCompatActivity implements View.On
             Log.i("checkValid",characterClass);
             switch (characterClass) {
                 case "GUERRIER":
-                    player = new Guerrier(level, strength, intelligence, agility);
+                    player = new Guerrier(level, strength, intelligence, agility,name);
                     break;
                 case "RODEUR":
-                    player = new Rodeur(level, strength, intelligence, agility);
+                    player = new Rodeur(level, strength, intelligence, agility, name);
                     break;
                 case "MAGE":
-                    player = new Mage(level, strength, intelligence, agility);
+                    player = new Mage(level, strength, intelligence, agility, name);
                     break;
             }
         }

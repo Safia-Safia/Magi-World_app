@@ -6,52 +6,53 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:layout_margin="10dp"
-    tools:context=".Controller.PlayerCreationActivity">
+    tools:context=".Controller.PlayerCreationActivity"
+    android:background="@drawable/bg2">
 
     <TextView
         android:id="@+id/creat_du_joeur"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:padding="20dp"
-        android:textColor="#01796F"
         android:text="@string/player_number"
         android:textAlignment="center"
-        android:textSize="15sp"
-        android:textStyle="bold" />
+        android:textSize="20sp"
+        android:textStyle="bold"
+        android:textColor="#FEFEFE"
+        />
 
 
-    <ImageButton
+    <ImageView
         android:id="@+id/btn_warrior"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:layout_width="116dp"
+        android:layout_height="116dp"
         android:layout_below="@+id/text_diff_roles"
+        android:layout_alignParentStart="true"
+        android:layout_marginStart="34dp"
         android:layout_marginLeft="30dp"
-        android:layout_marginTop="-6dp"
-        android:background="#FEFEFE"
-        android:gravity="center_horizontal"
-        app:srcCompat="@drawable/ic_guerrier" />
-
-    <ImageButton
-        android:id="@+id/btn_rodeur"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_below="@+id/text_diff_roles"
-        android:layout_marginLeft="28dp"
         android:layout_marginTop="-1dp"
-        android:layout_toRightOf="@+id/btn_warrior"
-        android:background="#FEFEFE"
-        app:srcCompat="@drawable/ic_rodeur" />
+        android:gravity="center_horizontal"
+        app:srcCompat="@drawable/guerrier" />
 
-    <ImageButton
-        android:id="@+id/btn_mage"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+    <ImageView
+        android:id="@+id/btn_rodeur"
+        android:layout_width="116dp"
+        android:layout_height="116dp"
         android:layout_below="@+id/text_diff_roles"
-        android:layout_marginLeft="25dp"
+        android:layout_marginLeft="-1dp"
+        android:layout_marginTop="-2dp"
+        android:layout_toRightOf="@+id/btn_warrior"
+        app:srcCompat="@drawable/rodeur" />
+
+    <ImageView
+        android:id="@+id/btn_mage"
+        android:layout_width="116dp"
+        android:layout_height="116dp"
+        android:layout_below="@+id/text_diff_roles"
+        android:layout_marginLeft="-2dp"
         android:layout_marginTop="2dp"
         android:layout_toRightOf="@+id/btn_rodeur"
-        android:background="#FEFEFE"
-        app:srcCompat="@drawable/ic_mage" />
+        app:srcCompat="@drawable/mage" />
 
     <TextView
         android:id="@+id/text_diff_roles"
@@ -59,27 +60,57 @@
         android:layout_height="wrap_content"
         android:padding="10dp"
         android:gravity="center_horizontal"
-        android:textColor="#01796F"
         android:layout_below="@+id/creat_du_joeur"
         android:text="Guerrier                        Rodeur                       Mage"
-        android:textStyle="bold|italic"/>
+        android:textStyle="bold|italic"
+        android:textColor="#FEFEFE"
+        />
 
 
     <RelativeLayout
         android:layout_width="wrap_content"
         android:layout_height="440dp"
         android:layout_below="@+id/btn_rodeur"
-        android:layout_marginTop="27dp"
+        android:layout_alignParentStart="true"
         android:layout_marginBottom="30dp"
+        android:background="@color/cardview_shadow_end_color"
         android:orientation="vertical">
+
+        <RelativeLayout
+            android:id="@+id/text_name"
+            android:layout_width="match_parent"
+            android:layout_height="56dp"
+            android:layout_marginTop="30dp"
+            android:orientation="vertical"
+            android:textAlignment="center">
+
+            <TextView
+                android:id="@+id/name"
+                android:layout_width="115dp"
+                android:layout_height="39dp"
+                android:layout_centerVertical="true"
+                android:text="Nom:"
+                android:textAppearance="?android:attr/textAppearanceLarge"
+                android:textColor="#FEFEFE"
+                android:textSize="20dp" />
+
+            <EditText
+                android:id="@+id/edit_name"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_toEndOf="@+id/name"
+                android:gravity="center_horizontal"
+                android:hint="Entrer un nom"
+                android:textColorHint="#DFF2FF"
+                android:textColor="@android:color/white" />
+        </RelativeLayout>
 
         <RelativeLayout
             android:id="@+id/ch1"
             android:layout_width="wrap_content"
             android:layout_height="56dp"
-            android:layout_marginTop="30dp"
-            android:orientation="vertical"
-            >
+            android:layout_below="@+id/text_name"
+            android:orientation="vertical">
 
             <TextView
                 android:id="@+id/niveau"
@@ -88,6 +119,7 @@
                 android:layout_centerVertical="true"
                 android:text="Niveau :"
                 android:textAppearance="?android:attr/textAppearanceLarge"
+                android:textColor="#FEFEFE"
                 android:textSize="20dp" />
 
             <EditText
@@ -97,8 +129,10 @@
                 android:layout_marginStart="6dp"
                 android:layout_toEndOf="@+id/niveau"
                 android:gravity="center_horizontal"
-                android:inputType="number"
-                android:hint="Entre 1 et 100" />
+                android:hint="Entre 1 et 100"
+                android:textColorHint="#FEFEFE"
+                android:textColor="@android:color/white"
+                android:inputType="number" />
 
             <TextView
                 android:id="@+id/life"
@@ -109,8 +143,8 @@
                 android:layout_toEndOf="@+id/edit_level"
                 android:background="#83A697"
                 android:text="Vie:"
-                android:textColor="#FEFEFE"
                 android:textAlignment="center"
+                android:textColor="#FEFEFE"
                 android:textSize="20dp" />
         </RelativeLayout>
 
@@ -129,6 +163,7 @@
                 android:layout_centerVertical="true"
                 android:text="Force :"
                 android:textAppearance="?android:attr/textAppearanceLarge"
+                android:textColor="#FEFEFE"
                 android:textSize="20dp" />
 
             <EditText
@@ -136,9 +171,11 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_toEndOf="@+id/force"
-                android:inputType="number"
                 android:gravity="center_horizontal"
-                android:hint="Entre 0 et 100" />
+                android:hint="Entre 0 et 100"
+                android:textColorHint="#FEFEFE"
+                android:textColor="@android:color/white"
+                android:inputType="number" />
         </RelativeLayout>
 
         <RelativeLayout
@@ -156,6 +193,7 @@
                 android:layout_centerVertical="true"
                 android:text="Agilité :"
                 android:textAppearance="?android:attr/textAppearanceLarge"
+                android:textColor="#FEFEFE"
                 android:textSize="20dp" />
 
             <EditText
@@ -164,8 +202,10 @@
                 android:layout_height="wrap_content"
                 android:layout_toEndOf="@+id/text_agility"
                 android:gravity="center_horizontal"
-                android:inputType="number"
-                android:hint="Entre 0 et 100" />
+                android:textColorHint="#FEFEFE"
+                android:hint="Entre 0 et 100"
+                android:textColor="@android:color/white"
+                android:inputType="number" />
 
         </RelativeLayout>
 
@@ -185,6 +225,7 @@
                 android:gravity="center_horizontal"
                 android:text="Intelligence :"
                 android:textAppearance="?android:attr/textAppearanceLarge"
+                android:textColor="#FEFEFE"
                 android:textSize="20dp" />
 
             <EditText
@@ -193,20 +234,21 @@
                 android:layout_height="wrap_content"
                 android:layout_toEndOf="@+id/text_intelligence"
                 android:gravity="center_horizontal"
-                android:inputType="number"
-                android:hint="Entre 0 et 100" />
+                android:hint="Entre 0 et 100"
+                android:textColorHint="#FEFEFE"
+                android:textColor="@android:color/white"
+                android:inputType="number" />
 
         </RelativeLayout>
-
-        <Button
-            android:id="@+id/nextbtn"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_alignParentBottom="true"
-            android:layout_centerHorizontal="true"
-            android:background="#83A697"
-            android:text="Suivant"
-            android:textColor="#FEFEFE" />
-
     </RelativeLayout>
+
+    <Button
+        android:id="@+id/nextbtn"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_centerHorizontal="true"
+        android:background="#83A697"
+        android:text="Suivant"
+        android:textColor="#FEFEFE" />
 </RelativeLayout>

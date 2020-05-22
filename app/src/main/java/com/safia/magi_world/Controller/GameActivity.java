@@ -5,7 +5,10 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
+import android.content.DialogInterface;
+import android.content.Intent;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.TextView;
@@ -35,8 +38,8 @@ public class GameActivity extends AppCompatActivity implements View.OnClickListe
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_game);
-        player1 = getIntent().getParcelableExtra("player_one");
-        player2= getIntent().getParcelableExtra("player_two");
+        player1 = getIntent().getParcelableExtra(MainActivity.PLAYER_ONE);
+        player2= getIntent().getParcelableExtra(MainActivity.PLAYER_TWO);
 
         j1 = findViewById(R.id.textview_player1_life);
         j1.setText(getString(R.string.player_number_action, 1));
@@ -111,14 +114,43 @@ public class GameActivity extends AppCompatActivity implements View.OnClickListe
             v1.setText( getString ( R.string.level_Of_Life, currentOpponent.getLife()));
         }
         switchAttackingPlayer();
+
+        if (currentPlayer.getLife() <= 0 || currentOpponent.getLife() <=0){
+            endGame();
+        }
     }
 
 
     private void endGame () {
-        if (player1.getLife() <= 0 && player2.getLife() <=0){
-            AlertDialog.Builder popUp = new AlertDialog.Builder(this)
+        if (player2.getLife() <=0){
+          new AlertDialog.Builder(this)
+                .setTitle(getString(R.string.endGame))
+                .setMessage("Après un combat intense entre ces deux valeureux champions,"+ player2.getName()+" est tombé..."+ player1.getName()+ " a gagné !")
+                .setPositiveButton("Acceuil", new DialogInterface.OnClickListener() {
+                    @Override
+                    public void onClick(DialogInterface dialog, int which) {
+                        Intent intent = new Intent();
+                        startActivity(intent);
+                        finish();
+                    }
+                })
+                .create()
+                .show();}
+        else if (player1.getLife()<=0){new AlertDialog.Builder(this)
+                .setTitle(getString(R.string.endGame))
+                .setMessage("Après un combat intense entre ces deux valeureux champions,"+ player1.getName()+" est tombé..."+ player2.getName()+ " a gagné !")
+                .setPositiveButton("Acceuil", new DialogInterface.OnClickListener() {
+                    @Override
+                    public void onClick(DialogInterface dialog, int which) {
+                        Intent intent = new Intent();
+                        startActivity(intent);
+                        finish();     }
+                })
+                .create()
+                .show();
 
         }
+
     }
     public void displayRV() {
         RecyclerView rv = findViewById(R.id.turn_recycler_view);

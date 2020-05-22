@@ -21,6 +21,8 @@ public class MainActivity extends AppCompatActivity {
     public static final String PLAYER = "PLAYER";
     private static Character p1 = null;
     private static Character p2 = null;
+    public static final String PLAYER_ONE= "PLAYER_ONE";
+    public static final String PLAYER_TWO= "PLAYER_TWO";
     int playerNumber;
 
     @Override
@@ -73,8 +75,8 @@ public class MainActivity extends AppCompatActivity {
                 }else {
                     p2 = data.getParcelableExtra(PLAYER);
                     Intent gameActivityIntent = new Intent(MainActivity.this, GameActivity.class);
-                    gameActivityIntent.putExtra("player_one", p1);
-                    gameActivityIntent.putExtra("player_two", p2);
+                    gameActivityIntent.putExtra(PLAYER_ONE, p1);
+                    gameActivityIntent.putExtra(PLAYER_TWO, p2);
                     startActivity(gameActivityIntent);
                 }
             }

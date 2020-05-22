@@ -5,8 +5,8 @@ import android.os.Parcelable;
 
 public class Rodeur extends Character implements Parcelable {
 
-    public Rodeur(int numJoueur, int strength, int agility, int intelligence) {
-        super(numJoueur,strength, agility, intelligence);
+    public Rodeur(int numJoueur, int strength, int agility, int intelligence, String playersName) {
+        super(numJoueur,strength, agility, intelligence,playersName);
         classe="Rodeur";
         scream = "Psst...! ";
     }
@@ -14,6 +14,11 @@ public class Rodeur extends Character implements Parcelable {
 
     public Rodeur(Parcel in) {
         super(in);
+    }
+
+    @Override
+    public String getName() {
+        return playersName;
     }
 
     public static final Parcelable.Creator<Character> CREATOR = new Parcelable.Creator<Character>(){
@@ -38,7 +43,7 @@ public class Rodeur extends Character implements Parcelable {
 
     @Override
     public String basicAttackString(Character opponent) {
-        return  " utilise Tire à l'Arc et inflige " + agility + " de dégâts !";
+        return  getName()+" utilise Tire à l'Arc et inflige " + agility + " de dégâts !";
     }
 
     @Override
@@ -48,7 +53,7 @@ public class Rodeur extends Character implements Parcelable {
 
     @Override
     public String specialAttackString(Character opponent) {
-        return num + " utilise concentration et gagne "+ (agility / 2) + " en agilité !\n";
+        return getName()+ " utilise concentration et gagne "+ (agility / 2) + " en agilité !\n";
     }
 
 

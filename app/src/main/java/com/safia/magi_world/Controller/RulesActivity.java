@@ -43,6 +43,7 @@ public class RulesActivity extends AppCompatActivity {
         mAdapter = new RulesAdapter(rules);
         RecyclerView recyclerView = findViewById(R.id.recyclerview2);
         RecyclerView.LayoutManager layoutManager = new LinearLayoutManager(this);
+
         recyclerView.setLayoutManager(layoutManager);
         recyclerView.setAdapter(mAdapter);
     }
